@@ -1,0 +1,55 @@
+server:
+  port: 8002
+
+
+spring:
+  rocketmq:
+    nameServer: 127.0.0.1:9876
+    producer:
+      group: my-group
+      send-message-timeout: 10000
+  application:
+    name: nacos-order-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3307/month6?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+  cloud:
+    alibaba:
+      seata:
+        #自定义事务组名称需要与seata-server中的对应
+        tx-service-group: cx_tx_group
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#对Feign的支持
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      annoroad-beta:
+        connectTimeout: 10000 #单位毫秒
+        readTimeout: 10000 #单位毫秒
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.czz.spring.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    io:
+      seata: info
+ribbon:
+  ReadTimeout: 30000 #单位毫秒
+  ConnectTimeout: 30000 #单位毫秒

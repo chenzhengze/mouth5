@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud_api" />
+        <module name="EmailService8003" />
+        <module name="OrderService8002" />
+        <module name="cloud_GateWay9527" />
+        <module name="CourseService8001" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

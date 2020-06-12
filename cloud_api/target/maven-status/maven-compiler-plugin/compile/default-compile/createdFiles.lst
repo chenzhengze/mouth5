@@ -1,0 +1,7 @@
+com\czz\spring\entity\CommonResult.class
+com\czz\spring\entity\Course.class
+com\czz\spring\entity\Car.class
+com\czz\spring\entity\User.class
+com\czz\spring\entity\CarVo.class
+com\czz\spring\entity\Order.class
+com\czz\spring\entity\OrderDetail.class
